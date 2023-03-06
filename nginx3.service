@@ -1,5 +1,5 @@
 [Unit]
-Description=Nginx1
+Description=Nginx3
 Documentation=man:nginx(8)
 After=network.target nss-lookup.target
 
@@ -7,8 +7,8 @@ After=network.target nss-lookup.target
 Type=forking
 PIDFile=/run/nginx.pid
 ExecStartPre=/usr/sbin/nginx -t -q -g 'daemon on; master_process on;'
-ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx1.conf -g 'daemon on; master_process on;'
-ExecReload=/usr/sbin/nginx -c /etc/nginx/nginx1.conf -g 'daemon on; master_process on;' -s reload
+ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx3.conf -g 'daemon on; master_process on;'
+ExecReload=/usr/sbin/nginx -c /etc/nginx/nginx3.conf -g 'daemon on; master_process on;' -s reload
 ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid
 PrivateTmp=true
 TimeoutStopSec=5
